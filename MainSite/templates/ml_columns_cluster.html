@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Настройте кластерный анализ</title>
+</head>
+<style>
+    body {background-color: rgb(18,57,74);
+    font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+
+</style>
+<body>
+<a class="btn btn-outline-primary" href="{{ url_for('index_page') }}">На главную</a><br>
+__________________________________________________________________________________________<br><br>
+<a style="font-family: 'Consolas', Times, serif;color: rgb(209,0,0);;">{{ error }}</a><br>
+<img src="/static/i_cluster.png" width="750" height="500" style="float: right;">
+<form action="" method="POST">
+        Введите параметры:<br><br>
+    Количество кластеров = <input type="text" name="n_clusters"><br><br>
+    Метрика: <select name="affinity">
+    <option value="euclidean" SELECTED>Евклидово расстояние</option>
+    <option value="l1">Расстояние городских кварталов</option>
+    <option value="l2">Евклидова норма</option>
+    <option value="manhattan">Манхэттенское расстояние</option>
+    <option value="cosine">Косинусное сходство</option>
+</select><br><br>
+    <input name="myFile" type="hidden"  value={{ file }}>
+    <input name="method" type="hidden"  value={{ method }}>
+    <input name="exampleRadios" type="hidden"  value=-1>
+    <button type="submit">Обучить!</button>
+    </form>
+</body>
+</html>

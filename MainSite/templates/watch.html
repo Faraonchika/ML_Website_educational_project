@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ value }}</title>
+</head>
+<style>
+    body {background-color: rgb(18,57,74);
+    font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+</style>
+<body>
+<a class="btn btn-primary btn-lg active" href="{{ url_for('library_page') }}" role="button">Назад</a>
+<a class="btn btn-primary btn-lg active" href="{{ url_for('index_page') }}" role="button">На главную</a>
+
+<br>
+_________________________________________________________________________________________
+<br>
+<pre>{{ lib }}</pre>
+</body>
+</html>

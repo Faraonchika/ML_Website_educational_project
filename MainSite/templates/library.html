@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Библиотека</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+body {background-color: powderblue;}
+body { background-image: url("https://www.theasset.com//storage/Image/2019/Nov/1572581440machinelearning-analytics-website.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);
+    }
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Times New Roman', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+.line  {
+ border-top: 20px #000; /* Параметры линии */
+}
+
+</style>
+<body>
+<a class="btn btn-outline-info" href="{{ url_for('index_page') }}" style="color:rgb(18,57,74)">Назад</a><br>
+<div class="line"  style="color:rgb(18,57,74)">_____________________________________________________________________________________________________________________________________________________________________________</div>
+<br>
+{% for article in ARTICLES %}
+<!-- Split dropright button -->
+<button type="button" class="btn-lg">
+  <a href="{{ url_for('article_page', key=article['Key']) }}" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">{{ article['Key'] }}</a>
+</button>
+<br>
+<br>
+<div class="btn-group" role="group" aria-label="Basic example" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">
+    {% for key, value in d.items() %}
+    {% if article['Key'] == 'Предобработка данных' and key|int < 5 %}
+  <button type="button" class="btn btn-dark">
+      <a href="{{ url_for('watch_page', value=value, key=key) }}" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">{{ value }}</a>
+  </button>&nbsp;
+    {% elif article['Key'] == 'Обучение с учителем' and  5 <= key|int < 15 %}
+  <button type="button" class="btn btn-dark">
+      <a href="{{ url_for('watch_page', value=value, key=key) }}" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">{{ value }}</a>
+  </button>&nbsp;
+    {% elif article['Key'] == 'Обучение без учителя' and  15 <= key|int < 30 %}
+  <button type="button" class="btn btn-dark">
+      <a href="{{ url_for('watch_page', value=value, key=key) }}" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">{{ value }}</a>
+  </button>&nbsp;
+    {% endif %}
+    {% endfor %}
+</div>
+<br>
+<br>
+<div class="line"  style="width:560px;color:rgb(18,57,74)">_____________________________________________________________________________________________________________________________________________________________________________</div>
+{% endfor %}
+</body>
+</html>

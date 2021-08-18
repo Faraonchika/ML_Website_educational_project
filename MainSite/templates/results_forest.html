@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты обучения случайного леса</title>
+</head>
+<style>
+    body {font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+
+</style>
+<body>
+<a class="btn btn-outline-primary" href="{{ url_for('index_page') }}">На главную</a><br>
+__________________________________________________________________________________________<br>
+<img src="/static/tree_result.jpg" width="150" height="100" style="float: right;">
+Метрики ошибок:<br><br>
+Mean Absolute Error = {{ mae }}<br>
+Median Absolute Error = {{ mdae }}<br>
+Median Squared Error = {{ rmse }}<br>
+_________________________________________________________________________________________<br><br>
+<a href= {{file}} download>Скачать результат</a><br>
+<br>
+Одно из деревьев леса (робот рад, он обучился):<br>
+<img src={{ran}} width="150%" height="150%">
+</body>
+</html>

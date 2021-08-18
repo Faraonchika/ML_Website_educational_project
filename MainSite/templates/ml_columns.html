@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Выберите целевое значение и параметры</title>
+</head>
+<style>
+    body {background-color: rgb(18,57,74);
+    font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+
+</style>
+<body>
+<a class="btn btn-outline-primary" href="{{ url_for('index_page') }}">На главную</a>
+<a class="btn btn-outline-primary" href="{{ url_for('ml_page') }}">Назад</a><br>
+__________________________________________________________________________________________<br>
+<a style="font-family: 'Consolas', Times, serif;color: rgb(209,0,0);;">{{ error }}</a><br>
+<img src="/static/tree_image.png" width="750" height="500" style="float: right;">
+Выберите целевую переменную (первая строчка документа!):<br>
+<br>
+{% for column in columns %}
+<form action="" method="POST">
+    <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="inlineRadio1" value={{ columns.index(column) }}>
+  <label class="form-check-label" for="inlineRadio1">{{ column }}</label>
+</div>
+{% endfor %}<br>
+    <br>
+    <br>
+    Введите параметры дерева:<br>
+    _________________________________________________________<br>
+    <br><br>
+    Максимальная глубина дерева (int >= 0) = <input type="text" name="max_depth"><br><br>
+    Минимальное количество экземпляров для разделения (int > 1) = <input type="text" name="min_samples_split"><br><br>
+    Минимальное количество экземпляров в листьях (int > 1) = <input type="text" name="min_samples_leaf"><br><br>
+    Максимальное количество экземпляров при поиске лучшего разделения (не больше чем факторов) = <input type="text" name="max_features"><br><br>
+    <input name="myFile" type="hidden"  value={{file}}>
+    <input name="method" type="hidden"  value={{method}}>
+    <button type="submit" style="rgb(0,155,209);
+font-family: 'Consolas', Times, serif;color: rgb(0,155,209);">Обучить!</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{article['Key']}}</title>
+</head>
+<style>
+    body {background-color: rgb(18,57,74);
+    font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+</style>
+<body>
+<a class="btn btn-outline-primary" href="{{ url_for('library_page') }}" style="font-family: 'Consolas', Times, serif;color:rgb(0,20,150);;">Назад</a>
+<a class="btn btn-outline-primary" href="{{ url_for('index_page') }}" style="font-family: 'Consolas', Times, serif;color:rgb(0,20,150);;">На главную</a>
+<br>
+<a style="font-family: 'Consolas', Times, serif;color:rgb(0,20,150);;">________________________________________________________________________________________________________________________<br></a>
+<br>
+{{article['Text']}}<br>
+<img src="/static/article.png" height="420" >
+</body>
+</html>

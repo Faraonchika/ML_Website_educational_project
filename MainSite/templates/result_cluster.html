@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат кластерного анализа</title>
+</head>
+<style>
+    body {font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+
+</style>
+<body>
+<a class="btn btn-outline-primary" href="{{ url_for('index_page') }}">На главную</a><br>
+__________________________________________________________________________________________<br>
+<img src="/static/tree_result.jpg" width="150" height="100" style="float: right;">
+При кластеризации были использованы следующие фичи:<br><br>
+{% for feature in features %}
+{{ feature }}||
+{% endfor %}<br>
+__________________________________________________________________________________________<br><br>
+<a href= {{file}} download>Скачать результат</a><br>
+Получена следующая дендрограмма (робот рад, он обучился):<br>
+<img src={{ ran }}><br>
+__________________________________________________________________________________________<br><br>
+Визуализация результата:<br>
+<img src={{ ran1 }}>
+</body>
+</html>

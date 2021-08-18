@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обучить модель</title>
+</head>
+<style>
+    body {background-color: rgb(18,57,74);
+    font-family: 'Consolas', Times, serif;
+    color: rgb(0,155,209);}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+
+</style>
+<body>
+<a class="btn btn-outline-primary" href="{{ url_for('index_page') }}" style="rgb(0,155,209);
+font-family: 'Consolas', Times, serif;color: rgb(0,155,209);">На главную</a><br>
+__________________________________________________________________________________________<br>
+<form action="" method="POST">
+    <br>
+    <input name="myFile" type="file" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">(пока только excel, формат файла: первая строчка - имена переменных, ниже значения)<br>
+    <br>
+    Выберите метод:
+    <br>
+<select name="method" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">
+    <option value="tree" SELECTED>Дерево решений</option>
+    <option value="r_forest">Случайный лес</option>
+    <option value="i_cluster">Иерархический кластерный</option>
+</select><br>
+    <br>
+    Внимание! Будьте внимательны при выборе параметров обучения! Если вас выкидывает на эту страницу, то параметры были введены неверно!<br>
+    Также нужно задать все параметры!
+    Информацию о параметрах можно найти в библиотеке <-<br>
+    <br>
+    <button type="submit" style="font-family: 'Consolas', Times, serif;color: rgb(0,155,209);;">Отправить!</button>
+</form>
+<img src="/static/ml_image.jpg" width="850" height="450" >
+</body>
+</html>

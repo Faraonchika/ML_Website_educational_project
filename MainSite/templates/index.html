@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+body {background-color: rgb(0,155,209);}
+body {  background-image: url("https://www.pandasecurity.com/france/mediacenter/src/uploads/2019/07/Pandasecurity-Qu%E2%80%99est-ce-que-le-machine-learning-.jpg");
+  background-attachment: fixed;
+  background-size: cover;}
+header {
+  font-family: 'Consolas', Times, serif;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0,155,209);
+}
+section:after {
+  content: "";
+  display: table;
+  font-size: 20px;
+  clear: both;
+}
+m {
+  font-family: 'Consolas', Times, serif; /* Гарнитура текста */
+  font-size: 250%; /* Размер шрифта в процентах */
+ }
+
+</style>
+<body>
+<header>Машинное обучение доступно каждому</header>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<section>
+&nbsp;&nbsp;&nbsp;<a style="width:250px;height:90px;border: none;color:rgb(101,197,216)" class="btn btn-outline-primary" href="{{ url_for('library_page') }}"><m>Изучить</m></a>
+&nbsp;&nbsp;&nbsp;<a style="width:250px;height:90px;border: none;color:rgb(101,197,216)" class="btn btn-outline-primary" href="{{ url_for('ml_page') }}"><m>Обучить</m></a>
+<br>
+</section>
+</body>
+</html>
